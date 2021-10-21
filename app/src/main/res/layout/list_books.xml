@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true"
+    app:cardUseCompatPadding="true"
+    card_view:cardPreventCornerOverlap="false"
+    android:id="@+id/PopularBook_cv">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:background="@color/background">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image_container"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="false">
+
+                <ImageView
+                    android:id="@+id/thumbnail_ImageView"
+                    android:layout_width="86dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@+id/image_container"
+                android:layout_toRightOf="@+id/image_container"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bookTitle"
+                        android:layout_width="242dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:paddingRight="3dp"
+                        android:singleLine="true"
+                        android:text="Titulo"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/stars_valor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center_vertical"
+                        android:text="3.4"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_baseline_star" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bookAuthor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:singleLine="true"
+                    android:text="Author"
+                    android:textColor="@color/navbar_noselected"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_paginas" />
+
+                    <TextView
+                        android:id="@+id/paginas_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="Paginas"
+                        android:textColor="#F3EDED"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+                <!--- BOTONES
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/category_label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/categories_corner"
+                        android:backgroundTint="#706E6C"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Button"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:singleLine="true"/>
+                    <Button
+                        android:id="@+id/category_label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/categories_corner"
+                        android:backgroundTint="#706E6C"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Button"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:singleLine="true"/>
+                    <Button
+                        android:id="@+id/category_label3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/categories_corner"
+                        android:backgroundTint="#706E6C"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Button"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:singleLine="true"/>
+                    <Button
+                        android:id="@+id/category_label4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/categories_corner"
+                        android:backgroundTint="#706E6C"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Button"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:singleLine="true"/>
+
+
+
+
+
+                </LinearLayout>
+                -->
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider">
+
+
+        <Button
+            android:id="@+id/btn_reservarFisica"
+            style="@style/btn_reserva"
+            android:background="@drawable/shadow_btn"
+            android:fontFamily="sans-serif-black"
+            android:text="reserva fisica"
+            android:textSize="30dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reserva Confirmada"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/check_main" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_lecturaDigital"
+            style="@style/btn_reserva"
+            android:background="@drawable/reserva_style"
+            android:fontFamily="sans-serif-black"
+            android:onClick="ReservaDigital"
+            android:text="reserva digital"
+            android:textSize="30dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

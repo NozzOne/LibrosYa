@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EstiloTabs" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">28sp</item>
+    </style>0
+
+    <style name="input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:backgroundTint">#8c8c8c</item>
+        <item name="android:ems">10</item>
+        <item name="android:focusable">true</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#8c8c8c</item>
+    </style>
+
+    <style name="btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:background">@drawable/login_corner</item>
+        <item name="android:backgroundTint">#1B1C22</item>
+        <item name="android:drawablePadding">2dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">26dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="perfi_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">#ADABAF</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="label_tag">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">#706E6C</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Titulo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_reserva" parent="btn">
+        <item name="android:layout_width">380dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+</resources>
