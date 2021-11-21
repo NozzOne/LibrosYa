@@ -92,22 +92,22 @@
             android:layout_width="match_parent"
             android:layout_height="46dp" />
         <Button
-            android:id="@+id/add_book"
+            android:id="@+id/option_libros"
             style="@style/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="Agregar libro" />
+            android:text="administrar Libros" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="15dp" />
         <Button
-            android:id="@+id/add_category"
+            android:id="@+id/option_bibliotecas"
             style="@style/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="Agregar categoria" />
+            android:text="administrar bibliotecas" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="15dp" />

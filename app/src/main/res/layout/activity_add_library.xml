@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.AddLibrary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Agregar biblioteca"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="normal|bold" />
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:id="@+id/library_add_name"
+            style="@style/input"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Nombre Biblioteca" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/library_add_direccion"
+            style="@style/input"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Dirección Biblioteca" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/library_add_zipcode"
+            style="@style/input"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Codigo postal" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/library_add_imagen"
+            style="@style/input"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Imagen url" />
+
+
+        <Button
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:onClick="AgregarBiblioteca"
+            android:text="Agregar biblioteca" />
+
+        <Button
+            android:id="@+id/volver"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="Volver"
+            android:text="Volver" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

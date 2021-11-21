@@ -18,6 +18,8 @@ import com.aiep.librosya.DBHelper;
 import com.aiep.librosya.HomeActivity;
 import com.aiep.librosya.MainActivity;
 import com.aiep.librosya.R;
+import com.aiep.librosya.admin.ManageBiblioteca;
+import com.aiep.librosya.admin.ManageBooks;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,9 +87,9 @@ public class Profile extends Fragment implements View.OnClickListener {
             email.setText("No se puedo cargar");
         }
 
-        Button agregarLibro = (Button) view.findViewById(R.id.add_book);
+        Button agregarLibro = (Button) view.findViewById(R.id.option_libros);
         agregarLibro.setOnClickListener((View.OnClickListener) this);
-        Button agregarCategoria = (Button) view.findViewById(R.id.add_category);
+        Button agregarCategoria = (Button) view.findViewById(R.id.option_bibliotecas);
         agregarCategoria.setOnClickListener((View.OnClickListener) this);
         Button cerrar = (Button) view.findViewById(R.id.cerrar_sesion);
         cerrar.setOnClickListener((View.OnClickListener) this);
@@ -114,9 +116,12 @@ public class Profile extends Fragment implements View.OnClickListener {
             Intent salir = new Intent(v.getContext(), MainActivity.class);
             startActivity( salir);
             getActivity().finish();
-        } else if (v.getId() == R.id.add_book){
-            Intent add_book = new Intent(v.getContext(), AddBook.class);
-            startActivity(add_book);
+        } else if (v.getId() == R.id.option_libros){
+            Intent manageBooks = new Intent(v.getContext(), ManageBooks.class);
+            startActivity(manageBooks);
+        }else if (v.getId() == R.id.option_bibliotecas){
+            Intent manageBibliotecas = new Intent(v.getContext(), ManageBiblioteca.class);
+            startActivity(manageBibliotecas);
         }
     }
 

@@ -36,6 +36,7 @@ public class Start extends Fragment {
     List<Libro> elements;
     List<PersonaLibros> lista_libros;
     int user_id;
+    RecentAdapter recentAdapter;
 
 
 
@@ -59,7 +60,8 @@ public class Start extends Fragment {
     public Start() {
         // Required empty public constructor
     }
-    
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,12 +79,8 @@ public class Start extends Fragment {
         HomeActivity activity = (HomeActivity) getActivity();
         user_id = activity.getUser_id();
 
-
-
         StartRecent(view);
         StartPopular(view);
-
-
 
         return view;
     }
@@ -108,7 +106,8 @@ public class Start extends Fragment {
             }
         }
 
-        RecentAdapter recentAdapter = new RecentAdapter(lista_libros, getContext(), new RecentAdapter.OnItemClickListener() {
+
+        recentAdapter = new RecentAdapter(lista_libros, getContext(), new RecentAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(PersonaLibros item) {
                 MoveToRecentBook(item);
