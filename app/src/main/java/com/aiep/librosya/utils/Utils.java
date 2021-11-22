@@ -8,10 +8,11 @@ public class Utils {
     public static final String CAMPO_EMAIL = "email";
     public static final String CAMPO_PASSWORD = "password";
     public static final String IS_ADMIN = "isadmin";
+    public static final String avatar = "avatar";
 
     public static final String CREAR_TABLA_PERSONA = "CREATE TABLE IF NOT EXISTS " +
             TABLA_PERSONA+"("+CAMPO_ID_PERSONA+" INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + CAMPO_EMAIL +" TEXT, "+CAMPO_NOMBRE+" TEXT, "+ CAMPO_PASSWORD + " TEXT, "+IS_ADMIN+" INTEGER )";
+            + CAMPO_EMAIL +" TEXT, "+CAMPO_NOMBRE+" TEXT, "+ CAMPO_PASSWORD + " TEXT, "+IS_ADMIN+" INTEGER, "+ avatar +" BLOB)";
 
 
     //libros l

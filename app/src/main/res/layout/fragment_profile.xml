@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.Profile">
 
     <LinearLayout
@@ -11,11 +12,9 @@
         android:background="@color/background"
         android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="46dp" />
 
         <TextView
+            android:layout_marginTop="46dp"
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,22 +24,21 @@
             android:textSize="34sp"
             android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="17dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/profileAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
-            android:foreground="@drawable/circulo"
-            tools:src="@tools:sample/avatars" />
+            android:layout_marginTop="17dp"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:padding="0dp"
+            android:scaleType="fitXY" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
 
         <TextView
+            android:layout_marginTop="24dp"
             android:id="@+id/textView9"
             style="@style/perfi_text"
             android:text="Nombre:" />
@@ -61,11 +59,9 @@
             android:layout_marginRight="50dp"
             android:background="@color/navbar_noselected" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/textView10"
             style="@style/perfi_text"
             android:layout_width="match_parent"
@@ -88,30 +84,27 @@
             android:layout_marginRight="50dp"
             android:background="@color/navbar_noselected" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="46dp" />
+
         <Button
             android:id="@+id/option_libros"
             style="@style/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="administrar Libros" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:text="administrar Libros"
+            android:layout_marginTop="46dp"/>
+
         <Button
+            android:layout_marginTop="15dp"
             android:id="@+id/option_bibliotecas"
             style="@style/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:text="administrar bibliotecas" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+
         <Button
+            android:layout_marginTop="15dp"
             android:id="@+id/cerrar_sesion"
             style="@style/btn"
             android:layout_width="match_parent"
