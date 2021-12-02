@@ -3,6 +3,7 @@ package com.aiep.librosya;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -72,6 +73,14 @@ public class ReservaActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void ReservaFisica(View view){
+        Intent i = new Intent(this, SelecionBiblioteca.class);
+        i.putExtra("user_id", user_id);
+        i.putExtra("libro_id", libro_id);
+        startActivity(i);
+        finish();
     }
 
 

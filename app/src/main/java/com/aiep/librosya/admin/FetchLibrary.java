@@ -28,7 +28,7 @@ import java.util.Map;
 public class FetchLibrary extends AppCompatActivity {
 
     Button btn_actualizar, btn_fetch, btn_delete;
-    EditText ed_nombre, ed_direccion, ed_zipcode, ed_imagen, ed_id;
+    EditText ed_nombre, ed_direccion, ed_zipcode, ed_imagen, ed_id, ed_telefono;
 
 
 
@@ -53,6 +53,8 @@ public class FetchLibrary extends AppCompatActivity {
         ed_zipcode = findViewById(R.id.library_add_zipcode);
         ed_imagen = findViewById(R.id.library_add_imagen);
         ed_id = findViewById(R.id.library_id);
+        ed_telefono = findViewById(R.id.library_add_telefono);
+
 
     }
 
@@ -66,17 +68,19 @@ public class FetchLibrary extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        String nombre, imagen, address, zipcode;
+                        String nombre, imagen, address, zipcode, telefono;
                         try {
                             nombre = response.getString("biblioteca_name");
                             imagen = response.getString("biblioteca_image");
                             address = response.getString("address");
                             zipcode = response.getString("address_postalcode");
+                            telefono = response.getString("telefono");
 
                             ed_nombre.setText(nombre);
                             ed_direccion.setText(address);
                             ed_zipcode.setText(zipcode);
                             ed_imagen.setText(imagen);
+                            ed_telefono.setText(telefono);
                             btn_delete.setVisibility(View.VISIBLE);
                             btn_actualizar.setVisibility(View.VISIBLE);
                         } catch (JSONException e) {
@@ -145,13 +149,14 @@ public class FetchLibrary extends AppCompatActivity {
         String imagen = ed_imagen.getText().toString().trim();
         String zipcode = ed_zipcode.getText().toString().trim();
         String id = ed_id.getText().toString().trim();
+        String telefono = ed_telefono.getText().toString().trim();
 
-        UpdateLibrary(nombre, direccion, imagen, zipcode, id);
+        UpdateLibrary(nombre, direccion, imagen, zipcode, id, telefono);
 
 
     }
 
-    private void UpdateLibrary(String nombre, String direccion, String imagen, String zipcode, String id){
+    private void UpdateLibrary(String nombre, String direccion, String imagen, String zipcode, String id, String telefono){
         String URL = "http://192.168.1.96/android/update.php";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
@@ -178,6 +183,7 @@ public class FetchLibrary extends AppCompatActivity {
                 params.put("biblioteca_image", imagen);
                 params.put("address", direccion);
                 params.put("address_postalcode", zipcode);
+                params.put("telefono", telefono);
 
 
                 return params;

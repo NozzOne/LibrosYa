@@ -58,6 +58,16 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Imagen url" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/library_add_telefono"
+            style="@style/input"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Telefono" />
+
 
 
         <Button

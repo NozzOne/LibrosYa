@@ -21,6 +21,7 @@
             style="@style/btn_reserva"
             android:background="@drawable/shadow_btn"
             android:fontFamily="sans-serif-black"
+            android:onClick="ReservaFisica"
             android:text="reserva fisica"
             android:textSize="30dp" />
 

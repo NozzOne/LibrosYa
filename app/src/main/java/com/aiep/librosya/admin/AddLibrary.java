@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class AddLibrary extends AppCompatActivity {
 
-    EditText nombre, direccion, zipcode, imagen;
+    EditText nombre, direccion, zipcode, imagen, telefono;
 
 
     RequestQueue requestQueue;
@@ -41,6 +41,8 @@ public class AddLibrary extends AppCompatActivity {
         direccion  = findViewById(R.id.library_add_direccion);
         zipcode  = findViewById(R.id.library_add_zipcode);
         imagen  = findViewById(R.id.library_add_imagen);
+        telefono = findViewById(R.id.library_add_telefono);
+
     }
 
 
@@ -49,18 +51,20 @@ public class AddLibrary extends AppCompatActivity {
         String str_direccion = direccion.getText().toString().trim();
         String str_zipcode = zipcode.getText().toString().trim();
         String str_imagen = imagen.getText().toString().trim();
+        String str_telefono = telefono.getText().toString().trim();
 
-        Createlibrary(str_nombre, str_direccion, str_zipcode, str_imagen);
+        Createlibrary(str_nombre, str_direccion, str_zipcode, str_imagen, str_telefono);
 
         nombre.setText("");
         direccion.setText("");
         zipcode.setText("");
         imagen.setText("");
+        telefono.setText("");
 
     }
 
 
-    private void Createlibrary(final String str_nombre, final String str_direccion, final String str_zipcode, final String str_imagen) {
+    private void Createlibrary(final String str_nombre, final String str_direccion, final String str_zipcode, final String str_imagen, final String str_telefono) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_SAVED, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -69,6 +73,7 @@ public class AddLibrary extends AppCompatActivity {
                 direccion.getText().clear();
                 zipcode.getText().clear();
                 imagen.getText().clear();
+                telefono.getText().clear();
 
             }
         }, new Response.ErrorListener() {
@@ -85,6 +90,7 @@ public class AddLibrary extends AppCompatActivity {
                 parametros.put("biblioteca_image", str_imagen);
                 parametros.put("address", str_direccion);
                 parametros.put("address_postalcode", str_zipcode);
+                parametros.put("telefono", str_telefono);
                 return parametros;
             }
         };

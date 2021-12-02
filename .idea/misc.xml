@@ -38,11 +38,13 @@
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/drawable/thumbnail_corner.xml" value="0.26180555555555557" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/font/time_new_roman.xml" value="0.29765625" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_add_library.xml" value="0.275" />
+        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_biblioteca_mas_info.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_fetch_library.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_fetch_library2.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_manage_biblioteca.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_manage_books.xml" value="0.275" />
+        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/activity_selecion_biblioteca.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/add_book.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/add_category.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_biblioteca.xml" value="0.275" />
@@ -55,8 +57,8 @@
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_perfil.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_perfil2.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_popular.xml" value="0.275" />
-        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
-        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_search.xml" value="0.15390625" />
+        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_profile.xml" value="0.31516587677725116" />
+        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_search.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_start.xml" value="0.33" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/fragment_ultimos.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/home.xml" value="0.275" />
@@ -64,6 +66,7 @@
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/item.xml" value="0.271484375" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/item_layout.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/libro.xml" value="0.25" />
+        <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/list_bibiotecas.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/list_books.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/list_library.xml" value="0.275" />
         <entry key="..\:/Users/valeriko777/AndroidStudioProjects/LibrosYa/app/src/main/res/layout/login.xml" value="0.275" />
