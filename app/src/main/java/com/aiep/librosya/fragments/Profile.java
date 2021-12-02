@@ -96,7 +96,7 @@ public class Profile extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // rellena el layout
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         TextView nombre = (TextView) view.findViewById(R.id.nombre_usuario);
         TextView email = (TextView) view.findViewById(R.id.correo_txt);
@@ -106,6 +106,9 @@ public class Profile extends Fragment implements View.OnClickListener {
         HomeActivity activity = (HomeActivity) getActivity();
         int user_id =  activity.getUser_id();
 
+
+
+        // SE OBTIENEN LOS DATOS DEL USUARIO DESDE LA BASE DE DATOS SQLITE
         SQLiteDatabase db = conn.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT nombre, email, avatar FROM persona WHERE id = "+ user_id, null);
@@ -114,12 +117,14 @@ public class Profile extends Fragment implements View.OnClickListener {
             nombre.setText(cursor.getString(0));
             email.setText(cursor.getString(1));
 
-            //check blob
-            ;
+            //VERIFICA SI EL BLOB (TIPO DE DATO) EN LA BASE DE DATOS ESTA LLENO O VACIO
+
             if (cursor.getBlob(2) == null){
+                //SI ESTA VACIO RELLENA LA IMAGEN AVATAR CON UNA IMAGEN GENERICA
                 String URL = "https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg";
                 Glide.with(view).load(URL).placeholder(null).into(avatar);
             }else{
+                //SI ESTA LLENO LO RELLENA CON LA IMAGORMACION DE LA IMAGEN
                 byte[] image = cursor.getBlob(2);
                 avatar.setImageBitmap(DbUtility.getImage(image));
             }
@@ -128,6 +133,7 @@ public class Profile extends Fragment implements View.OnClickListener {
             email.setText("No se puedo cargar");
         }
 
+        //SE ASIGNAN BOTONES
         Button agregarLibro = (Button) view.findViewById(R.id.option_libros);
         agregarLibro.setOnClickListener((View.OnClickListener) this);
         Button agregarCategoria = (Button) view.findViewById(R.id.option_bibliotecas);
@@ -135,18 +141,22 @@ public class Profile extends Fragment implements View.OnClickListener {
         Button cerrar = (Button) view.findViewById(R.id.cerrar_sesion);
         cerrar.setOnClickListener((View.OnClickListener) this);
 
+        //SE VERIFICA NIVEL DE USUARIO
         Cursor cursor1 = db.rawQuery("SELECT 1 FROM persona WHERE persona.id = "+ user_id +" AND persona.id = 1", null);
         cursor1.moveToFirst();
 
         if (cursor1.getCount() != 0){
+            // SI ES DISTINTO DE 0 SE MUESTRAN BOTONES DE ADMINISTRACION
             agregarLibro.setVisibility(view.VISIBLE);
             agregarCategoria.setVisibility(view.VISIBLE);
 
         }else {
+            //SI ES 0 SE OCULTAN
             agregarLibro.setVisibility(view.GONE);
             agregarCategoria.setVisibility(view.GONE);
 
         }
+        //SI SE DA CLICK EN LA IMAGEN (EN EL ELEMENTO IMAGEBUTTON) CARGAN LAS OPCIONES PARA CAMBIAR IMAGENES
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,11 +183,17 @@ public class Profile extends Fragment implements View.OnClickListener {
         }
     }
 
+    //MENU QUE SE DESPLIEGA PARA CAMBIAR LA IMAGEN
     private void CargarImagen(){
 
+        //SE DECLARAN OPCIONES
         final CharSequence[] opciones = {"Camara", "Cancelar"};
+
+        // SE CREA EL ELEMENTO ALERDIALOG
         final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(getContext());
         alertOpciones.setTitle("Cambiar Foto de perfil");
+        //SE ESPERA A QUE EL USUARIO ELIGA UNA DE LAS OPCIONES MOSTRADAS
+
         alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -189,48 +205,36 @@ public class Profile extends Fragment implements View.OnClickListener {
 
             }
         });
+
+        // SE MUESTRAN OPCIONES
         alertOpciones.show();
 
     }
 
+    //SE INICIO LA CAMARA PARA TOMAR LA FOTO
+    //ESTO INICIA UN INTENT
     private void takePicture(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         Fragment frag = this;
         frag.startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
     }
-    public Uri getImageUri(Context inContext, Bitmap inImage){
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
 
-    public String getRealPathFromURI(Uri contentUri){
-        Cursor cursor = null;
-        try {
-            String[] proj = { MediaStore.Images.Media.DATA };
-            cursor = getActivity().getContentResolver().query(contentUri, proj, null, null, null);
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            cursor.moveToFirst();
-            return cursor.getString(column_index);
 
-        }finally {
-            if (cursor != null){
-                cursor.close();
-            }
-        }
-    }
 
+
+    //SE ACTIVA CUANDO LA SE TERMINA LA ACTIVIDAD DE LA CAMARA
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_IMAGE_CAPTURE) {
 
-                //colocar IMagen de perfil
+                //colocar Imagen de perfil en aplicacion
 
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
                 avatar.setImageBitmap(photo);
+
+
                 //se guarda en la base de datos
 
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -249,10 +253,6 @@ public class Profile extends Fragment implements View.OnClickListener {
                 db.update(Utils.TABLA_PERSONA, values, "id = "+ user_id, null);
                 db.close();
 
-                // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
-                Uri selectedImage = getImageUri(getActivity(), photo);
-                String realPath=getRealPathFromURI(selectedImage);
-                selectedImage = Uri.parse(realPath);
             }
         }
     }
